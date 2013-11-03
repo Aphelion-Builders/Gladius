@@ -1,33 +1,49 @@
-# Gladius
+Development repository for Gladius engine core.
+If you're looking to get started with using Gladius, please checkout the main repository [here](https://github.com/gladiusjs/gladius).
 
-Gladius is a game engine, written entirely in JavaScript, and designed to run in the browser. We leverage existing web technologies whenever possible and where gaps exist in support for games, we develop new solutions.
+# Getting Started
 
-## Version
+Before you can build and test, you'll need to set up your development environment:
 
-Gladius follows the Semantic Versioning Specification. See http://semver.org for full details.
+1. Make sure you have a recent version of `node` installed (>=0.6). See [here](http://nodejs.org/) for details on how to do this for your platform.
+2. Install `jake` globally.
 
-## Reporting Issues
+            npm install -g jake
 
-Please report issues through the github project. Questions and discussions happen in #games on irc.mozilla.org, and on the paladin-dev mailing list at https://groups.google.com/group/paladin-dev.
+3. Clone the repository.
 
-## Getting Started
+            git clone git://github.com/gladiusjs/gladius-core.git
 
-Make sure to clone all submodules. This can be done using 'make submodule'.
+4. Run `jake` in the project directory. You should see the following output:
 
-## Build and Test
+            jake lint       # lint code  
+            jake build      # compile code  
+            jake clean      # remove compiled code
+            jake serve      # start web server in project directory
 
-No building is needed for development workflows. To build the engine for distribution, run make in the top-level
-project directory. The build process produces a javascript file containing the entire engine and its dependencies
-and also a minified version of that file.
+## Running the tests
 
-Run unit tests by opening test/ directory in a web browser. Tests run automatically and failures are marked in red.
+You will need a web server that can serve files from the project directory.
+Follow these instructions if you would like to use the server that comes with Gladius.
 
-## Examples and Help
+1. Run the web server.
 
-## Contributing
+            jake serve
 
-See https://wiki.mozilla.org/Paladin/Workflow for details about git workflow, testing, and code reviews.
+2. Go to the following URL in your browser to view the tests. Be sure to use a recent version of Firefox or Chrome.
 
-## License
+            http://localhost:8080/tests
 
-See LICENSE for more information.
+
+You can also run lint tests using `jake lint`.
+
+## Building the module
+
+You can build both the minified and unminified versions of the modules by running `jake build`.
+Build output is stored in the `dist` directory.
+
+# License and Notes
+
+See [LICENSE](https://github.com/gladiusjs/gladius-core/blob/develop/LICENSE) for more information.
+
+All our logos are handmade by [Sean Martell](https://twitter.com/#!/mart3ll).
